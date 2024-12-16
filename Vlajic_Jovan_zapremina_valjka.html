@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zapremina valjka</title>
+    </head>
+
+    <body>
+        <script>
+
+            var h = prompt("Unesite visinu valjka u centrimetrima: ");
+            alert("Visina valjka je " + h + " cm");
+            
+            var r = prompt("Unesite poluprečnik valjka u centrimetrima: ");
+            alert("Poluprečnik valjka je " + r + " cm");
+
+            // prikaz zapremine u mililitrima, tj. kubnim centrimetirma
+            var v = parseInt(r) * parseInt(r) * 3.14 * parseInt(h);
+            var rounded_V = v.toFixed(2); // zaokruživanje na 2 decimale
+            alert("Zapremina valjka je " + rounded_V + " kubnih cm ili mililitara");
+
+            // prikaz zapremine u litrama, tj. kubnim decimetrima
+            var z = v / 1000;
+            var rounded_Z = z.toFixed(2);
+            alert("Zapremina valjka je " + rounded_Z + " kubnih dm ili litara");
+            
+            // ispis u HTML dokumentu
+            document.write("Zapremina valjka je " + rounded_V + " kubnih cm ili mililitara");
+            document.write("<br>"); // kako bih razdvojio dvije linije document.write
+            document.write("Zapremina valjka je " + rounded_Z + " kubnih dm ili litara");
+            
+        </script>
+    </body>
+
+</html>
