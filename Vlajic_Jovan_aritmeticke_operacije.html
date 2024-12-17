@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VLAJIC JOVAN - ARITMETICKE OPERACIJE</title>
+    </head>
+
+    <body>
+        <script>
+
+        let brojPrvi = parseFloat(prompt("Unesite prvi broj:"));
+
+        let znakOperacije = prompt("Unesite znak matematičke operacije (npr. +, -, *, /):");
+
+        let brojDrugi = parseFloat(prompt("Unesite drugi broj:"));
+      
+        function zadatak (brojPrvi, brojDrugi, znakOperacije) {
+        if (isNaN(brojPrvi) || isNaN(brojDrugi)) {
+            alert("Molim Vas unesite brojeve kao zadane vrijednoti.");
+        } else if (znakOperacije === "+") {
+            return brojPrvi + brojDrugi;
+        } else if (znakOperacije === "-") {
+            return brojPrvi - brojDrugi;
+        } else if (znakOperacije === "*") {
+            return brojPrvi * brojDrugi;
+        } else if (znakOperacije === "/") {
+                if (brojDrugi !== 0) {
+                return  brojPrvi / brojDrugi;
+                } else {
+                    return null; 
+                    // koristio sam return null, 
+                    // kako ne bih dobijao vrijednost Infinity,
+                    // kada se dijeli sa nulom
+                }
+        }
+        }
+
+        function operacija (znakOperacije) {
+        if (znakOperacije === "+") {
+            return "sabiranja";
+        } else if (znakOperacije === "-") {
+            return "oduzimanja";
+        } else if (znakOperacije === "*") {
+            return "množenja";
+        } else if (znakOperacije === "/") {
+            return "djeljenja";
+        } else {
+            return null; 
+            // koristio sam return null, 
+            // kako ne bih dobijao vrijednost Undified, 
+            // kada unos bude različit od +, -, *, /
+            // na primjer , ili slovo ili neki drugi znak
+        }
+        }
+       
+        let rezultat = zadatak(brojPrvi, brojDrugi, znakOperacije);
+        let operator = operacija(znakOperacije);
+
+        if ((rezultat !== null && operator !== null) && (rezultat !== undefined && operator !== undefined)) {
+            alert("Rezultat " + operator + " je " + rezultat);
+        } else if (rezultat === null) {
+            alert("Nije dozvoljeno djeljenje sa nulom");
+            alert("Molimo Vas pokušajte ponovo")
+        } else if (operator === null) {
+            alert("Niste koristili ispravan znak operacija");
+            alert("Molimo Vas pokušajte ponovo")
+        } else {
+            alert("Molimo Vas pokušajte ponovo")
+        }
+
+        </script>
+    </body>
+
+</html>
